@@ -4,7 +4,8 @@ bin-release/
 [Oo]bj/
 [Bb]in/
 venv/
-.vs
+.vs/
+__pycache__
 
 # Other files and folders
 .settings/
