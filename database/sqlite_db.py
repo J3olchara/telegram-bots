@@ -5,7 +5,8 @@ import os
 
 def startdb():
     global base, cur
-    base = ps.connect(os.environ.get('DATABASE_URL'), sslmode = 'require')
+    #base = ps.connect(os.environ.get('DATABASE_URL'), sslmode = 'require')
+    base = sq.connect("database.db")
     cur = base.cursor()
     if base:
         print('database connected')
