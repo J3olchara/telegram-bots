@@ -2,10 +2,12 @@ import psycopg2 as ps
 from create_bot import bot, dp
 from aiogram import Dispatcher, types
 import os
+import sqlite3 as sq
 
 def startdb():
     global base2, cur2
-    base2 = ps.connect(os.environ.get('DATABASE_URL'), sslmode = 'require')
+    #base2 = ps.connect(os.environ.get('DATABASE_URL'), sslmode = 'require')
+    base2 = sq.connect("database.db")
     cur2 = base2.cursor()
     if base2:
         print('admin database connected')
