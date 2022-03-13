@@ -3,7 +3,7 @@ from aiogram.dispatcher import Dispatcher
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
 storage = MemoryStorage()
-TOKEN = ""
+TOKEN = "BOT TOKEN"
 #BOT_URL = 'https://melodydotobot.herokuapp.com/'
 bot = Bot(token=(TOKEN))
 dp = Dispatcher(bot, storage=storage)
