@@ -18,10 +18,10 @@ async def dbInsertService(state, servicedata):
     serviceprice = servicedata[3]
     cur.execute("INSERT INTO services(servicephoto, servicename, servicedescription, serviceprice) VALUES(%s, %s, %s, %s)", (servicephoto, servicename, servicedescription, serviceprice))
     base.commit()
-#async def giveservices(message):
-#    for service in sql_readlines():
-#        await bot.send_photo(message.from_user.id, service[0], f'{service[1]}\nОписание: {service[2]}\n\nЦена: {service[3]}', reply_markup=(InlineKeyboardMarkup().\
-#                add(InlineKeyboardButton(text = 'Связь с тренером', url = 'https://t.me/h3lladreams')))))
+async def giveservices(message):
+    for service in sql_readlines():
+        await bot.send_photo(message.from_user.id, service[0], f'{service[1]}\nОписание: {service[2]}\n\nЦена: {service[3]}', reply_markup=(InlineKeyboardMarkup().\
+                add(InlineKeyboardButton(text = 'Связь с тренером', url = 'tgurl')))))
     base.commit()
 async def sql_readlines():
     cur.execute('SELECT * FROM services')
